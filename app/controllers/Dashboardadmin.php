@@ -8,10 +8,22 @@ class Dashboardadmin extends Controller{
         if (empty($_SESSION['status'])){
             header('location: '. BASEURL . '/login');
         } 
-        $data['judul'] = 'Dashboard';
+        $data['judul'] = 'Dashboardadmin';
 
-        $this->view('tamplates/header', $data);
+        $this->view('templates/header', $data);
         $this->view('dashboardadmin/index');
-        $this->view('tamplates/footer');
+        $this->view('templates/footer');
+    }
+    public function indexbener()
+    {
+        session_start();
+        if (empty($_SESSION['status'])){
+            header('location: '. BASEURL . '/login');
+        } 
+        $data['judul'] = 'Dashboardadmin';
+
+        $this->view('templates/header', $data);
+        $this->view('dashboardadmin/indexbener', $data);
+        $this->view('templates/footer');
     }
 }

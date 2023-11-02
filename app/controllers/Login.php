@@ -21,9 +21,9 @@ class Login extends Controller{
 
             $data['judul'] = 'Login';
     
-            $this->view('tamplates/header', $data);
+            $this->view('templates/header', $data);
             $this->view('login/index', $data);
-            $this->view('tamplates/footer');
+            $this->view('templates/footer');
     }
 
     public function logout(){
@@ -54,7 +54,7 @@ class Login extends Controller{
                     // var_dump($_SESSION['status']);
 
                     if($_SESSION['status'] == 1){
-                        header('location: '. BASEURL . '/dashboardadmin');
+                        header('location: '. BASEURL . '/dashboardadmin/indexbener');
 
                     }else if($_SESSION['status'] == 2){
                         header('location: '. BASEURL . '/dashboard');
