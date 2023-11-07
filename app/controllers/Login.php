@@ -54,7 +54,7 @@ class Login extends Controller{
                     // var_dump($_SESSION['status']);
 
                     if($_SESSION['status'] == 1){
-                        header('location: '. BASEURL . '/dashboardadmin/indexbener');
+                        header('location: '. BASEURL . '/dashboardadmin');
 
                     }else if($_SESSION['status'] == 2){
                         header('location: '. BASEURL . '/dashboard');

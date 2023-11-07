@@ -58,13 +58,13 @@ class Database {
         $this->stmt->execute();
     }
 
-    public function resultSet()
+    public function getAll()
     {
         $this->execute();
         return $this->stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function singel()
+    public function getSingle()
     {
         $this->execute();
         return $this->stmt->fetch(PDO::FETCH_ASSOC);

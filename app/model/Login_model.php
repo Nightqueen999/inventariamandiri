@@ -15,14 +15,14 @@ class Login_model {
         $this->db->bind('username', $username);
 
         $this->db->execute();
-        return $this->db->rowCount();
+        return $this->db->getAll();
     }
 
     public function ambilDataUser($username)
     {
         $this->db->query('SELECT * FROM ' . $this->tabel . ' WHERE username =:username');
         $this->db->bind('username', $username);
-        return $this->db->singel();
+        return $this->db->getSingle();
     }
 
 }
