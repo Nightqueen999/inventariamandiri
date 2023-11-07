@@ -12,6 +12,8 @@ class Dashboardadmin extends Controller{
         }
         $data['judul'] = 'Dashboardadmin';
 
+        $data['user'] = $this->model('User_model')->getAllUser();
+
         $this->view('templates/header', $data);
         $this->view('dashboardadmin/index', $data);
         $this->view('templates/footer');

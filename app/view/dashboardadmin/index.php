@@ -7,10 +7,10 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    <i class="fas fa-user"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3">SB Admin <sup>2</sup></div>
+                <div class="sidebar-brand-text mx-3">Admin Manager</div>
             </a>
 
             <!-- Divider -->
@@ -328,26 +328,11 @@
                             </div>
                 </div>
 
-
-
-
-<!-- Button trigger modal -->
-
-
-
-
-
-
-
-
-
-
-
-
                     <!-- Content Row -->
                     <div class="row">
 
                         <!-- Card Content Start -->
+                        <?php foreach ($data['user'] as $user) : ?>
                         <div class="col-xl-3 col-md-6 mb-4">
                             <div class="card border-left-primary border-border-right-primary shadow h-100 py-2">
                                 <div class="card-body">
@@ -356,8 +341,8 @@
                                         <div class="col mr-2">
                                         <i class="fas fa-user-circle fa-3x mb-4"></i>
                                             <div class="h4 font-weight-bold text-dark mb-1">
-                                                Nik Nanda</div>
-                                            <div class="h5 mb-0 font-weight-bold text-primary">SuperVisor</div>
+                                                <?= $user['username']?></div>
+                                            <div class="h5 mb-0 font-weight-bold text-primary"><?= $user['position']?></div>
                                         </div>
                                         </div>
                                         <div class="d-flex row no-gutters justify-content-center mt-3">
@@ -370,6 +355,7 @@
                                 </div>
                             </div>
                         </div>
+                        <?php endforeach ?>
                     </div>
 
  
