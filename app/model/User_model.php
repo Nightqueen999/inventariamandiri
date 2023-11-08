@@ -16,22 +16,26 @@ class User_model{
 
         $this->db->execute();
 
-        return $this->db->getAll();
+        return $this->db->rowCount();
     }
-    public function deleteUser($id){
-        $query = "DELETE FROM" .$this->tabel. "WHERE idmanageuser=:idmanageuser";
+    public function deleteUser($id_manageuser){
+        $query = "DELETE FROM " .$this->tabel. " WHERE id_manageuser =:id_manageuser";
         $this->db->query($query);
-        $this->db->bind('idmanageuser',$id);
-        return $this->db->execute();
+        $this->db->bind('id_manageuser',$id_manageuser);
+        $this->db->execute();
+        return $this->db->rowCount();
     }
     public function editUser($data){
-        $query = "UPDATE ".$this->tabel. "SET username = :username AND position = :position";
+        $query = "UPDATE ".$this->tabel. "SET username = :username AND position = :position WHERE id_manageuser = :id_manageuser";
 
         $this->db->query($query);
         $this->db->bind('username',$data['username']);
         $this->db->bind('position',$data['position']);
+        $this->db->bind('id_manageuser',$data['id_manageuser']);
 
-        $this->db->execute();
+        return $this->db->execute();
+        $this->db->getsingle();
+        
     }
     public function getAllUser(){
         $query = "SELECT * FROM ".$this->tabel."";
@@ -39,9 +43,9 @@ class User_model{
         return $this->db->getAll();
     }
     public function getIdUser($id){
-        $query = "SELECT * FROM" .$this->tabel. "WHERE idmanageuser = :idmanageuser";
+        $query = "SELECT * FROM " .$this->tabel. " WHERE id_manageuser = :id_manageuser";
         $this->db->query($query);
-        $this->db->bind('idmanageuser',$id);
+        $this->db->bind('id_manageuser',$id);
         return $this->db->getSingle();
 
     }

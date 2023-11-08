@@ -305,15 +305,16 @@
                                     <div class="modal-body">
                                         <form action="<?=BASEURL?>/dashboardadmin/addUser" method="POST" class="form-control" style="border:none !important;">
                                             <div class="row">
+                                                    <input type="hidden"name="id_manageuser" class="form-control" value="<?$data['user']['id_manageuser']?>" >
                                                     <p class="col-form-label col-3">Username : </p>
                                                 <div class="col-9">
-                                                    <input type="text" name="username" class="form-control">
+                                                    <input type="text" name="username" class="form-control" value="<?$data['user']['username']?>">
                                                 </div>
                                             </div>
                                             <div class="row mt-3">
                                                     <p class="col-form-label col-3">Position : </p>
                                                 <div class="col-9">
-                                                    <input type="text" name="position" class="form-control">
+                                                    <input type="text" name="position" class="form-control" value="<?$data['user']['position']?>">
                                                 </div>
                                             </div>
                                     
@@ -348,8 +349,8 @@
                                         <div class="d-flex row no-gutters justify-content-center mt-3">
                                         <div class="col-auto text-center">
                                             <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
-                                            <button type="button" class="btn btn-warning" data-toggle="modal" data-target="#ModalEdit">Edit</button>
-                                            <button type="button" class="btn btn-danger">Hapus</button>
+                                            <a type="button" href="<?=BASEURL?>/dashboardadmin/update/1" class="btn btn-warning" data-toggle="modal" data-target="#ModalEdit">Edit</a>
+                                            <a type="button" href="<?= BASEURL ?>/dashboardadmin/delete/<?= $user['id_manageuser'] ?>" class="btn btn-danger">Hapus</a>
                                         </div>
                                     </div>
                                 </div>

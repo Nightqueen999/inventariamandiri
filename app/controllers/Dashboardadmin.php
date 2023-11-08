@@ -30,7 +30,30 @@ class Dashboardadmin extends Controller{
             exit;
             }
     }
-    public function a(){
-        
+    public function update($id_manageuser){
+        if ($id_manageuser > 0){
+            $data['user'] = $this->model('User_model')->getIdUser($id_manageuser);
+            var_dump( $data['user']);
+            if($this->model('User_model')->editUser($_POST) > 0){
+                echo "
+                    <script>
+                        alert('Data berhasil diubah');
+                        window.location.href = '". BASEURL ."/dashboardadmin';
+                    </script>
+                ";
+                exit;
+            }
+        }
+    }
+    public function delete($id_manageuser){
+        if($this->model('User_model')->deleteUser($id_manageuser) > 0){
+            echo "
+                <script>
+                    alert('Data berhasil dihapus');
+                    window.location.href = '". BASEURL ."/dashboardadmin';
+                </script>
+            ";
+            exit;
+        }
     }
 }
