@@ -303,7 +303,7 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="<?=BASEURL?>/dashboardadmin/addUser" method="POST" class="form-control" style="border:none !important;">
+                                        <form action="<?=BASEURL?>/dashboardadmin/update" method="POST" class="form-control" style="border:none !important;">
                                             <div class="row">
                                                     <input type="hidden"name="id_manageuser" class="form-control" value="<?$data['user']['id_manageuser']?>" >
                                                     <p class="col-form-label col-3">Username : </p>
@@ -349,7 +349,7 @@
                                         <div class="d-flex row no-gutters justify-content-center mt-3">
                                         <div class="col-auto text-center">
                                             <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
-                                            <a type="button" href="<?=BASEURL?>/dashboardadmin/update/1" class="btn btn-warning" data-toggle="modal" data-target="#ModalEdit">Edit</a>
+                                            <a type="button" href="<?=BASEURL?>/dashboardadmin/update/<?= $user['id_manageuser'] ?>" class="btn btn-warning" data-toggle="modal" data-target="#ModalEdit">Edit</a>
                                             <a type="button" href="<?= BASEURL ?>/dashboardadmin/delete/<?= $user['id_manageuser'] ?>" class="btn btn-danger">Hapus</a>
                                         </div>
                                     </div>

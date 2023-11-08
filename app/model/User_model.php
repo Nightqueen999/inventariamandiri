@@ -33,8 +33,8 @@ class User_model{
         $this->db->bind('position',$data['position']);
         $this->db->bind('id_manageuser',$data['id_manageuser']);
 
-        return $this->db->execute();
-        $this->db->getsingle();
+        $this->db->execute();
+        return $this->db->rowCount();
         
     }
     public function getAllUser(){

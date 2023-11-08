@@ -34,15 +34,7 @@ class Dashboardadmin extends Controller{
         if ($id_manageuser > 0){
             $data['user'] = $this->model('User_model')->getIdUser($id_manageuser);
             var_dump( $data['user']);
-            if($this->model('User_model')->editUser($_POST) > 0){
-                echo "
-                    <script>
-                        alert('Data berhasil diubah');
-                        window.location.href = '". BASEURL ."/dashboardadmin';
-                    </script>
-                ";
-                exit;
-            }
+            die;
         }
     }
     public function delete($id_manageuser){

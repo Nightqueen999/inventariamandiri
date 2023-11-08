@@ -12,9 +12,9 @@ class Dashboard extends Controller{
         }
 
         $data['judul'] = 'Dashboard';
-
+        $data['user'] = $this->model('User_model')->getAllUser();
         $this->view('templates/header', $data);
-        $this->view('dashboard/index');
+        $this->view('dashboard/index', $data);
         $this->view('templates/footer');
     }
 }
