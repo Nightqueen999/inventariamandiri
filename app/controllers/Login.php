@@ -67,7 +67,7 @@ class Login extends Controller{
                 } else {
                     echo "<script>
                             window.location.href = '". BASEURL ."/login';
-                            alert('Data berhasil diubah!');
+                            alert('Password Salah!');
                         </script>";
                 }
 
