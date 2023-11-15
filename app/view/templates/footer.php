@@ -8,6 +8,7 @@
 
     <!-- Custom scripts for all pages-->
     <script src="http://localhost/inventariamandiri/public/js/sb-admin-2.min.js"></script>
+    <script src="http://localhost/inventariamandiri/public/js/script.js"></script>
 
     <!-- Page level plugins -->
     <script src="http://localhost/inventariamandiri/public/vendor/chart.js/Chart.min.js"></script>

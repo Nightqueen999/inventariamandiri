@@ -37,6 +37,24 @@ class Dashboardadmin extends Controller{
             die;
         }
     }
+    public function updateUser(){
+        if($this->model('User_model')->editUser($_POST) > 0){
+            echo "
+                <script>
+                    window.location.href = '". BASEURL ."/dashboardadmin';
+                    alert('Data berhasil diubah');
+                </script>
+            ";
+        }
+        else {
+            echo "
+                <script>
+                    window.location.href = '". BASEURL ."/dashboardadmin';
+                    alert('Tidak ada data yang berubah!');
+                </script>
+            ";
+        }
+    }
     public function delete($id_manageuser){
         if($this->model('User_model')->deleteUser($id_manageuser) > 0){
             echo "
@@ -47,5 +65,10 @@ class Dashboardadmin extends Controller{
             ";
             exit;
         }
+    }
+
+    public function ambildata($id_manageuser){
+    $data = $this->model('User_model')->ambilDataJs($id_manageuser);
+    echo json_encode($data);
     }
 }

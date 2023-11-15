@@ -303,27 +303,28 @@
                                         </button>
                                     </div>
                                     <div class="modal-body">
-                                        <form action="<?=BASEURL?>/dashboardadmin/update" method="POST" class="form-control" style="border:none !important;">
+                                        <form action="<?=BASEURL?>/dashboardadmin/updateUser" method="POST" class="form-control" style="border:none !important;">
                                             <div class="row">
-                                                    <input type="hidden"name="id_manageuser" class="form-control" value="<?$data['user']['id_manageuser']?>" >
+                                                    <input type="hidden" id='id_useredit' name="id_manageuser" class="form-control" value="" >
                                                     <p class="col-form-label col-3">Username : </p>
                                                 <div class="col-9">
-                                                    <input type="text" name="username" class="form-control" value="<?$data['user']['username']?>">
+                                                    <input type="text" id='username' name="username" class="form-control" value="">
                                                 </div>
                                             </div>
                                             <div class="row mt-3">
                                                     <p class="col-form-label col-3">Position : </p>
                                                 <div class="col-9">
-                                                    <input type="text" name="position" class="form-control" value="<?$data['user']['position']?>">
+                                                    <input type="text" id='position' name="position" class="form-control" value="">
                                                 </div>
                                             </div>
                                     
-                                        </form>
+                                        
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                        <button type="submit" class="btn btn-primary">Save changes</button>
                                     </div>
+                                    </form>
                                 </div>
                             </div>
                             </div>
@@ -349,7 +350,7 @@
                                         <div class="d-flex row no-gutters justify-content-center mt-3">
                                         <div class="col-auto text-center">
                                             <!-- <i class="fas fa-calendar fa-2x text-gray-300"></i> -->
-                                            <a type="button" href="<?=BASEURL?>/dashboardadmin/update/<?= $user['id_manageuser'] ?>" class="btn btn-warning" data-toggle="modal" data-target="#ModalEdit">Edit</a>
+                                            <button type="button" id="id_user" data-id="<?=$user['id_manageuser']?>" class="btn btn-warning" data-toggle="modal" data-target="#ModalEdit">Edit</button>
                                             <a type="button" href="<?= BASEURL ?>/dashboardadmin/delete/<?= $user['id_manageuser'] ?>" class="btn btn-danger">Hapus</a>
                                         </div>
                                     </div>

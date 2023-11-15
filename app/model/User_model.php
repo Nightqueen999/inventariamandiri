@@ -26,7 +26,7 @@ class User_model{
         return $this->db->rowCount();
     }
     public function editUser($data){
-        $query = "UPDATE ".$this->tabel. "SET username = :username AND position = :position WHERE id_manageuser = :id_manageuser";
+        $query = "UPDATE {$this->tabel} SET username =:username, position =:position WHERE id_manageuser =:id_manageuser";
 
         $this->db->query($query);
         $this->db->bind('username',$data['username']);
@@ -48,6 +48,21 @@ class User_model{
         $this->db->bind('id_manageuser',$id);
         return $this->db->getSingle();
 
+    }
+
+    public function ambilDataJs($id_manageuser){
+        $query = "SELECT * FROM ".$this->tabel." WHERE id_manageuser = :id_manageuser";
+        $this->db->query($query);
+        $this->db->bind('id_manageuser',$id_manageuser);
+        return $this->db->getSingle();
+
+        // while ($row = $this->db->getAll() ){
+        //     $id_manageuser = $row['id_manageuser'];
+        //     $username = $row['username'];
+        //     $position = $row['position'];
+
+        //     $data[] = array('id_manageuser' => $id_manageuser, 'username' => $username, 'position' => $position);
+        // }
     }
 
 }
