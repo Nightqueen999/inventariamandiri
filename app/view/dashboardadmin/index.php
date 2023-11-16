@@ -20,7 +20,7 @@
             <li class="nav-item active mb-0">
                 <a class="nav-link" href="index.html">
                     <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Dashboard Admin</span></a>
+                    <span>Dashboard SuperAdmin</span></a>
             </li>
 
             <li class="nav-item">
@@ -253,7 +253,7 @@
 
                     <!-- Page Heading -->
                     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-                        <h1 class="h3 mb-0 text-gray-800">Kelola User</h1>
+                        <h1 class="h3 mb-0 text-gray-800">Kelola User (SuperAdmin)</h1>
                         <button type="button" class="btn btn-primary"  data-toggle="modal" data-target="#exampleModal" >Tambah User</button>
 
                             <!-- Modal Tambah-->

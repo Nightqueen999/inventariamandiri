@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.1.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Waktu pembuatan: 01 Nov 2023 pada 07.01
--- Versi server: 10.4.22-MariaDB
--- Versi PHP: 7.4.28
+-- Host: localhost:3306
+-- Generation Time: Nov 16, 2023 at 12:58 AM
+-- Server version: 8.0.30
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -24,43 +24,76 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Struktur dari tabel `user`
+-- Table structure for table `manageuser`
+--
+
+CREATE TABLE `manageuser` (
+  `id_manageuser` int NOT NULL,
+  `username` varchar(30) NOT NULL,
+  `position` varchar(30) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
+
+--
+-- Dumping data for table `manageuser`
+--
+
+INSERT INTO `manageuser` (`id_manageuser`, `username`, `position`) VALUES
+(2, 'Rama', 'Co-Supervisor'),
+(11, 'Nanda', 'CEO'),
+(12, 'Budi', 'Directour');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `user`
 --
 
 CREATE TABLE `user` (
-  `id_user` int(11) NOT NULL,
+  `id_user` int NOT NULL,
   `username` varchar(50) NOT NULL,
   `password` text NOT NULL,
   `status` enum('1','2') NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;
 
 --
--- Dumping data untuk tabel `user`
+-- Dumping data for table `user`
 --
 
 INSERT INTO `user` (`id_user`, `username`, `password`, `status`) VALUES
-(1, 'admin', '$2y$10$/xcjnnhYDctu2tBxWb6uRO41EUJAfYkjywZJuy34jXFa1FgT8YzvK', '1'),
-(2, 'user', '$2y$10$/xcjnnhYDctu2tBxWb6uRO41EUJAfYkjywZJuy34jXFa1FgT8YzvK', '2');
+(1, 'SuperAdmin', '$2y$10$/xcjnnhYDctu2tBxWb6uRO41EUJAfYkjywZJuy34jXFa1FgT8YzvK', '1'),
+(2, 'Admin', '$2y$10$/xcjnnhYDctu2tBxWb6uRO41EUJAfYkjywZJuy34jXFa1FgT8YzvK', '2');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indeks untuk tabel `user`
+-- Indexes for table `manageuser`
+--
+ALTER TABLE `manageuser`
+  ADD PRIMARY KEY (`id_manageuser`);
+
+--
+-- Indexes for table `user`
 --
 ALTER TABLE `user`
   ADD PRIMARY KEY (`id_user`);
 
 --
--- AUTO_INCREMENT untuk tabel yang dibuang
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT untuk tabel `user`
+-- AUTO_INCREMENT for table `manageuser`
+--
+ALTER TABLE `manageuser`
+  MODIFY `id_manageuser` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+
+--
+-- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id_user` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_user` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
